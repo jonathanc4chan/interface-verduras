@@ -1,8 +1,8 @@
 # interface-verduras
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+#import java.util.HashMap;
+#import java.util.Map;
+#import java.util.Scanner;
 
 // Definición de la interfaz Producto
 interface Producto {
