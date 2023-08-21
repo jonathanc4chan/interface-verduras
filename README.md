@@ -92,10 +92,15 @@ public class VentaVerdurasApp {
     }
 }
 segundo programa 
+
 // Definición de la interfaz VentaVerduras
+
 interface VentaVerduras {
+
     void agregarVerdura(String nombre, double precio);
+    
     void mostrarInventario();
+    
     double calcularTotalVentas();
 }
 
