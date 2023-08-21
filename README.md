@@ -91,3 +91,56 @@ public class VentaVerdurasApp {
         scanner.close();
     }
 }
+segundo programa 
+// Definición de la interfaz VentaVerduras
+interface VentaVerduras {
+    void agregarVerdura(String nombre, double precio);
+    void mostrarInventario();
+    double calcularTotalVentas();
+}
+
+// Implementación de la interfaz en la clase TiendaVerduras
+class TiendaVerduras implements VentaVerduras {
+    private Map<String, Double> inventario;
+
+    public TiendaVerduras() {
+        inventario = new HashMap<>();
+    }
+
+    @Override
+    public void agregarVerdura(String nombre, double precio) {
+        inventario.put(nombre, precio);
+    }
+
+    @Override
+    public void mostrarInventario() {
+        System.out.println("Inventario de la tienda:");
+        for (Map.Entry<String, Double> entry : inventario.entrySet()) {
+            System.out.println(entry.getKey() + " - Precio: $" + entry.getValue());
+        }
+    }
+
+    @Override
+    public double calcularTotalVentas() {
+        double totalVentas = 0.0;
+        for (Double precio : inventario.values()) {
+            totalVentas += precio;
+        }
+        return totalVentas;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        TiendaVerduras tienda = new TiendaVerduras();
+
+        tienda.agregarVerdura("Tomate", 1.5);
+        tienda.agregarVerdura("Lechuga", 2.0);
+        tienda.agregarVerdura("Zanahoria", 1.0);
+
+        tienda.mostrarInventario();
+
+        double totalVentas = tienda.calcularTotalVentas();
+        System.out.println("Total de ventas: $" + totalVentas);
+    }
+}
